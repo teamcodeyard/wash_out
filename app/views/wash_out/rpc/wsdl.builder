@@ -1,11 +1,11 @@
 xml.instruct!
-xml.definitions 'xmlns' => 'http://schemas.xmlsoap.org/wsdl/',
+xml.definitions 'xmlns' => 'https://schemas.xmlsoap.org/wsdl/',
                 'xmlns:tns' => @namespace,
-                'xmlns:soap' => 'http://schemas.xmlsoap.org/wsdl/soap/',
+                'xmlns:soap' => 'https://schemas.xmlsoap.org/wsdl/soap/',
                 'xmlns:xsd' => 'https://www.w3.org/2001/XMLSchema',
                 'xmlns:xsi' => 'https://www.w3.org/2001/XMLSchema-instance',
                 'xmlns:soap-enc' => 'https://schemas.xmlsoap.org/soap/encoding/',
-                'xmlns:wsdl' => 'http://schemas.xmlsoap.org/wsdl/',
+                'xmlns:wsdl' => 'https://schemas.xmlsoap.org/wsdl/',
                 'name' => @name,
                 'targetNamespace' => @namespace do
   xml.types do
@@ -42,7 +42,7 @@ xml.definitions 'xmlns' => 'http://schemas.xmlsoap.org/wsdl/',
   end
 
   xml.binding :name => "#{@name}_binding", :type => "tns:#{@name}_port" do
-    xml.tag! "soap:binding", :style => 'rpc', :transport => 'http://schemas.xmlsoap.org/soap/http'
+    xml.tag! "soap:binding", :style => 'rpc', :transport => 'https://schemas.xmlsoap.org/soap/http'
     @map.keys.each do |operation|
       xml.operation :name => operation do
         xml.tag! "soap:operation", :soapAction => operation
