@@ -34,7 +34,7 @@ module WashOut
         if Rails.application.config.relative_url_root.present?
           path.prepend Rails.application.config.relative_url_root
         end
-        return request.protocol + request.host_with_port + path.flatten.join('')
+        return WASH_OUT_PROTOCOL + request.host_with_port + path.flatten.join('')
       end
     end
 
