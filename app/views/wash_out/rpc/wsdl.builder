@@ -2,14 +2,14 @@ xml.instruct!
 xml.definitions 'xmlns' => 'http://schemas.xmlsoap.org/wsdl/',
                 'xmlns:tns' => @namespace,
                 'xmlns:soap' => 'http://schemas.xmlsoap.org/wsdl/soap/',
-                'xmlns:xsd' => 'http://www.w3.org/2001/XMLSchema',
-                'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-                'xmlns:soap-enc' => 'http://schemas.xmlsoap.org/soap/encoding/',
+                'xmlns:xsd' => 'https://www.w3.org/2001/XMLSchema',
+                'xmlns:xsi' => 'https://www.w3.org/2001/XMLSchema-instance',
+                'xmlns:soap-enc' => 'https://schemas.xmlsoap.org/soap/encoding/',
                 'xmlns:wsdl' => 'http://schemas.xmlsoap.org/wsdl/',
                 'name' => @name,
                 'targetNamespace' => @namespace do
   xml.types do
-    xml.tag! "schema", :targetNamespace => @namespace, :xmlns => 'http://www.w3.org/2001/XMLSchema' do
+    xml.tag! "schema", :targetNamespace => @namespace, :xmlns => 'https://www.w3.org/2001/XMLSchema' do
       defined = []
       @map.each do |operation, formats|
         (formats[:in] + formats[:out]).each do |p|
@@ -48,12 +48,12 @@ xml.definitions 'xmlns' => 'http://schemas.xmlsoap.org/wsdl/',
         xml.tag! "soap:operation", :soapAction => operation
         xml.input do
           xml.tag! "soap:body",
-            :use => "encoded", :encodingStyle => 'http://schemas.xmlsoap.org/soap/encoding/',
+            :use => "encoded", :encodingStyle => 'https://schemas.xmlsoap.org/soap/encoding/',
             :namespace => @namespace
         end
         xml.output do
           xml.tag! "soap:body",
-            :use => "encoded", :encodingStyle => 'http://schemas.xmlsoap.org/soap/encoding/',
+            :use => "encoded", :encodingStyle => 'https://schemas.xmlsoap.org/soap/encoding/',
             :namespace => @namespace
         end
       end

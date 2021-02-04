@@ -28,10 +28,10 @@ WashOut::Exception: #{e.continued_exception} for:
 
   def self.render_client_soap_fault msg
     xml = Builder::XmlMarkup.new
-    xml.tag! 'soap:Envelope', 'xmlns:soap' => 'http://schemas.xmlsoap.org/soap/envelope/',
-      'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance' do
+    xml.tag! 'soap:Envelope', 'xmlns:soap' => 'https://schemas.xmlsoap.org/soap/envelope/',
+      'xmlns:xsi' => 'https://www.w3.org/2001/XMLSchema-instance' do
         xml.tag! 'soap:Body' do
-          xml.tag! 'soap:Fault', :encodingStyle => 'http://schemas.xmlsoap.org/soap/encoding/' do
+          xml.tag! 'soap:Fault', :encodingStyle => 'https://schemas.xmlsoap.org/soap/encoding/' do
             xml.faultcode 'Client'
             xml.faultstring msg
           end

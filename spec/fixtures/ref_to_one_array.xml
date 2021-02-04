@@ -1,9 +1,9 @@
-<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-  <s:Body s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<s:Envelope xmlns:s="https://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body s:encodingStyle="https://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="https://www.w3.org/2001/XMLSchema">
     <list href="#id1" />
-    <q1:Array id="id1" q1:arrayType="xsd:int[1]" xmlns:q1="http://schemas.xmlsoap.org/soap/encoding/">
+    <q1:Array id="id1" q1:arrayType="xsd:int[1]" xmlns:q1="https://schemas.xmlsoap.org/soap/encoding/">
       <Item>1</Item>
       <Item>2</Item>
     </q1:Array>

@@ -1,6 +1,6 @@
 xml.instruct!
-xml.tag! "soap:Envelope", "xmlns:soap" => 'http://schemas.xmlsoap.org/soap/envelope/',
-                          "xmlns:xsd" => 'http://www.w3.org/2001/XMLSchema',
+xml.tag! "soap:Envelope", "xmlns:soap" => 'https://schemas.xmlsoap.org/soap/envelope/',
+                          "xmlns:xsd" => 'https://www.w3.org/2001/XMLSchema',
                           "xmlns:tns" => @namespace do
   if !header.nil?
     xml.tag! "soap:Header" do

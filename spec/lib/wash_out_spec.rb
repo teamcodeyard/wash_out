@@ -4,7 +4,7 @@ require 'spec_helper'
 
 SIMPLE_REQUEST_XML = <<-SIMPLE_REQUEST_XML_HEREDOC
 <?xml version="1.0" encoding="UTF-8"?>
-<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+<env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
   <env:Body>
     <tns:answer>
       <value>42</value>
@@ -15,7 +15,7 @@ SIMPLE_REQUEST_XML_HEREDOC
 
 SIMPLE_RESPONSE_XML = <<-SIMPLE_RESPONSE_XML_HEREDOC
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
+<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
   <soap:Body>
     <tns:answerResponse>
       <Value xsi:type="xsd:int">42</Value>
@@ -166,7 +166,7 @@ describe WashOut do
 
         request = <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
-          <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+          <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
           <env:Body>
             <tns:answer>
               <value>42</value>
@@ -177,7 +177,7 @@ describe WashOut do
 
         expect(HTTPI.post("http://app/route/api/action", request).body).to eq <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
+<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
   <soap:Body>
     <tns:answerResponse>
       <Value xsi:type="xsd:int">42</Value>
@@ -197,7 +197,7 @@ describe WashOut do
 
         request = <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
-          <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+          <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
           <env:Body>
             <tns:whatever>
               <value>42</value>
@@ -208,7 +208,7 @@ describe WashOut do
 
         expect(HTTPI.post("http://app/route/api/action", request).body).to eq <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
+<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
   <soap:Body>
     <tns:whateverResponse>
       <Value xsi:type="xsd:int">42</Value>
@@ -577,7 +577,7 @@ describe WashOut do
 
         request = <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
-          <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+          <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
           <env:Header>
               <tns:Auth>
                 <value>12345</value>
@@ -593,7 +593,7 @@ describe WashOut do
 
         expect(HTTPI.post("http://app/route/api/action", request).body).to eq <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
+<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
   <soap:Body>
     <tns:answerResponse>
       <Value xsi:type="xsd:int">42</Value>
@@ -614,7 +614,7 @@ describe WashOut do
 
         request = <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
-          <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+          <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
           <env:Header>
             <value>12345</value>
           </env:Header>
@@ -641,7 +641,7 @@ describe WashOut do
 
         request = <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
-          <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+          <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
           <env:Header>
             <Auth>
               <AnswerResponse>12345</AnswerResponse>
@@ -670,7 +670,7 @@ describe WashOut do
 
         request = <<-XML
           <?xml version="1.0" encoding="UTF-8"?>
-          <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+          <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
           <env:Body>
             <tns:answer>
               <value>42</value>
@@ -681,7 +681,7 @@ describe WashOut do
 
         expect(HTTPI.post("http://app/route/api/action", request).body).to eq <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
+<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
   <soap:Header>
     <tns:answerResponse>
       <Value xsi:type="xsd:string">12345</Value>
@@ -708,7 +708,7 @@ describe WashOut do
 
       request = <<-XML
         <?xml version="1.0" encoding="UTF-8"?>
-        <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+        <env:Envelope xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false" xmlns:env="https://schemas.xmlsoap.org/soap/envelope/">
         <env:Body>
           <tns:answer>
             <value>42</value>
@@ -719,7 +719,7 @@ describe WashOut do
 
       expect(HTTPI.post("http://app/route/api/action", request).body).to eq <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
+<soap:Envelope xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:tns="false">
   <soap:Header>
     <tns:answerResponse>
       <Auth xsi:type="xsd:string">12345</Auth>
@@ -959,7 +959,7 @@ describe WashOut do
 
     it "raises when SOAP message without SOAP Body arrives" do
       mock_controller do; end
-      invalid_request = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"></s:Envelope>'
+      invalid_request = '<s:Envelope xmlns:s="https://schemas.xmlsoap.org/soap/envelope/"></s:Envelope>'
       response_hash = Nori.new.parse(HTTPI.post("http://app/route/api/action", invalid_request).body)
       expect(response_hash["soap:Envelope"]["soap:Body"]["soap:Fault"]['faultstring']).to eq "Invalid SOAP request"
     end
