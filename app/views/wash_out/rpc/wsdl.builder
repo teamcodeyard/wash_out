@@ -1,11 +1,11 @@
 xml.instruct!
-xml.definitions 'xmlns' => 'https://schemas.xmlsoap.org/wsdl/',
+xml.definitions 'xmlns' => 'http://schemas.xmlsoap.org/wsdl/',
                 'xmlns:tns' => @namespace,
-                'xmlns:soap' => 'https://schemas.xmlsoap.org/wsdl/soap/',
+                'xmlns:soap' => 'http://schemas.xmlsoap.org/wsdl/soap/',
                 'xmlns:xsd' => 'https://www.w3.org/2001/XMLSchema',
                 'xmlns:xsi' => 'https://www.w3.org/2001/XMLSchema-instance',
                 'xmlns:soap-enc' => 'https://schemas.xmlsoap.org/soap/encoding/',
-                'xmlns:wsdl' => 'https://schemas.xmlsoap.org/wsdl/',
+                'xmlns:wsdl' => 'http://schemas.xmlsoap.org/wsdl/',
                 'name' => @name,
                 'targetNamespace' => @namespace do
   xml.types do
